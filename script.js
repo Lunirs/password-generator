@@ -87,6 +87,14 @@ var generatePassword = function () {
     finalArr = finalArr.concat(numberArray);
   }
 
+  //combine final array with random elements within the final array into the password array
+
+  for (i = 0; i < confirmLength; i++) {
+    password = password.concat(
+      finalArr.charAt(Math.floor(Math.random() * finalArr.length))
+    );
+  }
+
   return password;
 };
 
