@@ -43,6 +43,12 @@ function generatePassword() {
     }
   }
 
+  var confirmLowalph = confirm("Would you like for your password to include lower case letters?");
+  var confirmUpAlph = confirm("Would you like for your password to include capital letters?");
+  var confirmSpecchar = confirm("Would you like for your password to include special characters?");
+  var confirmNumm = confirm("Would you like for your password to include numbers?");
+
+
   // how many characters?
   // is it 8 or more characters?
   // no? send an error message
