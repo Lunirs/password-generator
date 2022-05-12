@@ -16,7 +16,7 @@ function writePassword() {
 // list of numbers
 
 var lower = "abcdefghijklmnopqrstuvwxyz";
-var specialChar = "!@#$%^&*()_+-=";
+var specialChar = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 var numbers = "0123456789";
 var lowerArray = Array(lower);
 var upperArray = Array(lower.toUpperCase());
@@ -28,30 +28,30 @@ var numberArray = Array(numbers);
 var generatePassword = function () {
   var password = "";
   var finalArr = "";
-  var confirmLength = "";
 
   //prompt for confirming the length of your password
 
-  confirmLength =
+  var confirmLength = parseInt(
     prompt(`Please specify the number of characters you would like for your password.
-  Password must be 8-128 characters.`);
+  Password must be 8-128 characters.`)
+  );
 
   //while loop to confirm user's choice was between 8 and 128
 
   while (confirmLength <= 7 || confirmLength >= 129) {
     alert(`Password length must be 8-128 characters. 
-    Please try again.`);
+Please try again.`);
 
     confirmLength =
       prompt(`Please specify the number of characters you would like for your password.
-  Password must be 8-128 characters.`);
+Password must be 8-128 characters.`);
+  }
+  // if user inputs anything but a number or cancels
 
-    // if user cancels or does not put in anything it returns  an alert
-
-    if (confirmLength === null) {
-      alert("Please enter the number of characters");
-      return;
-    }
+  if (isNaN(confirmLength)) {
+    alert(`Please press the button to try again!
+Please remember to input a number value to continue.`);
+    return;
   }
 
   //confirmations to add certain characters
